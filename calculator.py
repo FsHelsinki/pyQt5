@@ -94,63 +94,114 @@ class Ui_Dialog(object):
         self.pushButton_10.setText(_translate("Dialog", "9"))
         self.pushButton_10.clicked.connect(self.btn9)
         self.pushButton_11.setText(_translate("Dialog", "*"))
-        # self.pushButton_11.clicked.connect(self.btnU)
+        self.pushButton_11.clicked.connect(self.btnUmnoj)
         self.pushButton_12.setText(_translate("Dialog", "0"))
         self.pushButton_12.clicked.connect(self.btn0)
         self.pushButton_13.setText(_translate("Dialog", "-"))
-        # self.pushButton_13.clicked.connect(self.btnM)
+        self.pushButton_13.clicked.connect(self.btnMinus)
         self.pushButton_14.setText(_translate("Dialog", "/"))
-        # self.pushButton_14.clicked.connect(self.btnD)
+        self.pushButton_14.clicked.connect(self.btnDelit)
         self.pushButton_15.setText(_translate("Dialog", "="))
-        # self.pushButton_15.clicked.connect(self.btnE)
+        self.pushButton_15.clicked.connect(self.btnRavno)
         self.pushButton_16.setText(_translate("Dialog", "+"))
-        # self.pushButton_16.clicked.connect(self.Plus)
+        self.pushButton_16.clicked.connect(self.btnPlus)
+        self.flag = 0
+
+    def btnRavno(self):
+        if self.flag == 1:
+            self.c = int(self.a) + int(self.b)
+            print(self.c)
+            self.textEdit.setText(str(self.c))
+        else:
+            self.flag = 2
+            self.c = int(self.a) - int(self.b)
+            self.textEdit.setText(str(self.c))
+
+        
 
 
+
+    def btnPlus(self):
+        self.flag = 1
+    def btnDelit(self):
+        self.flag = 2
+    def btnMinus(self):
+        self.flag = 3
+    def btnUmnoj(self):
+        self.flag = 4
 
     def btn1(self):
-        self.a = str(self.a) + '1'
-        self.textEdit.setText(self.a)
+        if self.flag == 0:
+            self.a = str(self.a) + '1'
+            self.textEdit.setText(self.a)
+        else:
+            self.b = str(self.b) + '1'
+            self.textEdit.setText(self.b)
     def btn2(self):
-        self.a = str(self.a) + '2'
-        self.textEdit.setText(self.a)
+        if self.flag == 0:
+            self.a = str(self.a) + '2'
+            self.textEdit.setText(self.a)
+        else:
+            self.b = str(self.b) + '2'
+            self.textEdit.setText(self.b)
     def btn3(self):
-        self.a = str(self.a) + '3'
-        self.textEdit.setText(self.a)
+        if self.flag == 0:
+            self.a = str(self.a) + '3'
+            self.textEdit.setText(self.a)
+        else:
+            self.b = str(self.b) + '3'
+        self.textEdit.setText(self.b)
     def btn4(self):
-        self.a = str(self.a) + '4'
-        self.textEdit.setText(self.a)
+        if self.flag == 0:
+            self.a = str(self.a) + '4'
+            self.textEdit.setText(self.a)
+        else:
+            self.b = str(self.b) + '4'
+        self.textEdit.setText(self.b)
     def btn5(self):
-        self.a = str(self.a) + '5'
-        self.textEdit.setText(self.a)
+        if self.flag == 0:
+            self.a = str(self.a) + '5'
+            self.textEdit.setText(self.a)
+        else:
+            self.b = str(self.b) + '5'
+        self.textEdit.setText(self.b)
     def btn6(self):
-        self.a = str(self.a) + '6'
-        self.textEdit.setText(self.a)
+        if self.flag == 0:
+            self.a = str(self.a) + '6'
+            self.textEdit.setText(self.a)
+        else:
+            self.b = str(self.b) + '6'
+        self.textEdit.setText(self.b)
     def btn7(self):
-        self.a = str(self.a) + '7'
-        self.textEdit.setText(self.a)
+        if self.flag == 0:
+            self.a = str(self.a) + '7'
+            self.textEdit.setText(self.a)
+        else:
+            self.b = str(self.b) + '7'
+        self.textEdit.setText(self.b)
     def btn8(self):
-        self.a = str(self.a) + '8'
-        self.textEdit.setText(self.a)
+        if self.flag == 0:
+            self.a = str(self.a) + '8'
+            self.textEdit.setText(self.a)
+        else:
+            self.b = str(self.b) + '8'
+            self.textEdit.setText(self.b)
     def btn9(self):
-        self.a = str(self.a) + '9'
-        self.textEdit.setText(self.a)
+        if self.flag == 0:
+            self.a = str(self.a) + '9'
+            self.textEdit.setText(self.a)
+        else:
+            self.b = str(self.b) + '9'
+            self.textEdit.setText(self.b)
     def btn0(self):
-        self.a = str(self.a) + '0'
-        self.textEdit.setText(self.a)
-    # def btnM(self):
-    #     self.a = str(self.a) + '2'
-    # def btnD(self):
-    #     self.a = str(self.a) + '2'
-    # def btnU(self):
-    #     self.a = str(self.a) + '2'
-    # def btnE(self):
-    #     self.a = str(self.a) + '2'
-    # def btnPLUS(self):
-    #    self.a = str(self.a) + '2'
+        if self.flag == 0:
+            self.a = str(self.a) + '0'
+            self.textEdit.setText(self.a)
+        else:
+            self.b = str(self.b) + '0'
+            self.textEdit.setText(self.b)
 
-    def flag(self):
-        self.flag()
+
 
 
 if __name__ == "__main__":
